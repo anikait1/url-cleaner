@@ -12,3 +12,6 @@ npm run dev
 ## Built With
 - [TypeScript](https://www.typescriptlang.org/) - JavaScript with type safety
 - [Express](https://expressjs.com/) - Minimal and fast web framework
+
+## Note
+Project is currently in prototyping phase, any ideas and suggestions are welcomed!

@@ -15,14 +15,14 @@ app.use("/", (req, res, next) => {
 
 app.post("/", (req, res) => {
   const url = new URL(req.body.url);
-  const origin = url.origin;
+  const name = url.origin.split('.')[1];
 
-  const cleaner = domainMapper[origin];
+  const cleaner = domainMapper[name];
 
   if (cleaner) {
     res.send(cleaner(url));
   } else {
-    res.status(200).json({ message: "Website not supported " });
+    res.status(200).json({ message: "Website not supported" });
   }
 });
 

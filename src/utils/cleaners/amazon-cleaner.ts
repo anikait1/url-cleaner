@@ -4,10 +4,10 @@ const amazonCleaner: urlCleaner = (url) => {
   const baseUrl = url.origin;
   const productId = getProductIdPath(url.pathname);
 
-  if (productId.success === false) {
-    return "";
-  } else {
+  if (productId.success) {
     return baseUrl + "/dp/" + productId.path;
+  } else {
+    return "" // call to some other function
   }
 };
 

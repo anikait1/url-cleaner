@@ -5,6 +5,7 @@ const app = express();
 
 app.use(express.json());
 
+// middleware to ensure request has a url
 app.use("/", (req, res, next) => {
   if (!req.body.url) {
     res.status(400).json({ error: "No url provided" });
@@ -15,7 +16,7 @@ app.use("/", (req, res, next) => {
 
 app.post("/", (req, res) => {
   const url = new URL(req.body.url);
-  const name = url.origin.split('.')[1];
+  const name = (req.query.name as string) ?? url.origin.split('.')[1];
 
   const cleaner = domainMapper[name];
 

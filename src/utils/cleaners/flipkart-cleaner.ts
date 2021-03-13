@@ -22,4 +22,4 @@ const getProductIdPath = (urlPath: string): ProductIdPath => {
   }
 };
 
-export default flipkartCleaner;
+export { flipkartCleaner };

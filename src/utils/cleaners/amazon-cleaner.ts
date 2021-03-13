@@ -26,4 +26,4 @@ const getProductIdPath = (urlPath: string): ProductIdPath => {
   }
 };
 
-export default amazonCleaner;
+export { amazonCleaner };
